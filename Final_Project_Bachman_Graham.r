@@ -14,11 +14,11 @@
 ########################
 # 1.  Data Preparation #
 ########################
-sum(is.na(insurance))
 
 #     a.  Load the dataset insurance.csv into memory.
 library(readr)
-insurance <- read_csv("C:/Users/bachm/OneDrive - Maryville University/Fourth Year/SP2020/DSCI 512 - Predictive Modeling/Week 8/insurance.csv")
+insurance <- read_csv("C:/Users/bachm/OneDrive - Maryville University/B.S/Fourth Year/SP2020/DSCI 512 - Predictive Modeling/Week 8/insurance_data.csv")
+sum(is.na(insurance))
 #make sure sex is factor in memory if it isn't, convert it
 if(!is.factor(insurance$sex))
   insurance$sex <- as.factor(insurance$sex)
@@ -223,7 +223,7 @@ print('Optimal number of clusters is 2')
 km.insurance <- kmeans(numeric.insurance, 2, nstart=25)
 #     e.  Visualize the clusters in different colors, setting parameter
 #         geom="point"
-fviz_cluster(km.insurance, data = numeric.insurance)
+fviz_cluster(km.insurance, data = numeric.insurance, geom="point")
 
 ######################################
 # 7.  Build a neural networks model. #
